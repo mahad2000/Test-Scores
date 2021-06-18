@@ -1,3 +1,4 @@
+  
 #include <iostream>
 #include <cmath>
 
@@ -9,10 +10,10 @@ void program_title() {
 
 double calculator (double hours, double pay_rate, double total_gross_pay) {
   if (hours <= 0.0) {
-    throw invalid_argument ("Error! hours must be > 0."); // error statement for invalid number of hours.
+    throw("Error! hours must be > 0."); // error statement for invalid number of hours.
   }
   if (pay_rate <= 0.0) {
-    throw invalid_argument ("Error! rate must be > 0."); // error statement for invalid pay rate.
+    throw("Error! rate must be > 0."); // error statement for invalid pay rate.
   }
   if (hours > 40.0) { // this if statement tests if the user entrrs more than 40 hours  and then calculates the total gross pay with overtime pay properly added at the value of 1.5 times normal pay.
   double  overtime_hours,
@@ -47,8 +48,8 @@ int main() {
    total_gross_pay = calculator(hours, pay_rate, total_gross_pay);
    cout << "Calculated gross pay: " << total_gross_pay << "\n\n";
   }
-  catch (const invalid_argument& e) { // if the user enters incorrct data for pay_rate or hours line 51 is posted to the user explaining
-    cout << e.what() <<"\n";          // if they inputted wrong hours first or wrong rate of pay.
+  catch(const & e) { // if the user enters incorrct data for pay_rate or hours line 51 is posted to the user explaining
+    cout << e<<"\n";          // if they inputted wrong hours first or wrong rate of pay.
   }
   cout << "Bye!";
   return 0;
